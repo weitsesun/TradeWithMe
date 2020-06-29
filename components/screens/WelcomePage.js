@@ -33,19 +33,19 @@ const styles = StyleSheet.create({
   loginButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "tomato",
+    backgroundColor: "#e8a633",
   },
   registerButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "turquoise",
+    backgroundColor: "#0f978e",
   },
   logo: {
     width: 80,
     height: 80,
   },
   text: {
-    color: "white",
+    color: "#484848",
     fontSize: 20,
     fontWeight: "700",
   },
