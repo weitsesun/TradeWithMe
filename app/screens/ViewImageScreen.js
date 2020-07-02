@@ -1,11 +1,26 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+
 import colors from "../config/colors";
 
 function ViewImageScreen(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.closeIcon}></View>
+      <AntDesign
+        name="delete"
+        size={30}
+        color={colors.tertiary}
+        style={styles.deleteIcon}
+      />
+      <MaterialCommunityIcons
+        name="close"
+        size={30}
+        color={colors.white}
+        style={styles.closeIcon}
+      />
+
       <View style={styles.deleteIcon}></View>
       <Image
         style={styles.image}
@@ -34,18 +49,12 @@ const styles = StyleSheet.create({
   closeIcon: {
     position: "absolute",
     top: 70,
-    left: 30,
-    width: 40,
-    height: 40,
-    backgroundColor: colors.primary,
+    right: 30,
   },
   deleteIcon: {
     position: "absolute",
     top: 70,
-    right: 30,
-    width: 40,
-    height: 40,
-    backgroundColor: colors.secondary,
+    left: 30,
   },
 });
 

@@ -1,12 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import colors from "../config/colors.js";
+import AppButton from "../components/AppButton";
 
 export default function WelcomePage() {
+  function onPress() {
+    console.log("clicked");
+    return;
+  }
+
   return (
     <ImageBackground
       style={styles.background}
       source={require("../assets/welcome_page_background.jpg")}
+      blurRadius={7}
     >
       <View style={styles.logoContainer}>
         <Image
@@ -14,10 +21,12 @@ export default function WelcomePage() {
           source={require("../assets/logo.png")}
           resizeMode={"stretch"}
         />
-        <Text style={styles.text}>Trade Your Stuff Here</Text>
+        <Text style={styles.tagLine}>Trade Your Stuff Here</Text>
       </View>
-      <View style={styles.loginButton} />
-      <View style={styles.registerButton} />
+      <View style={styles.buttonContainer}>
+        <AppButton title="login" onPress={onPress} />
+        <AppButton title="register" color="secondary" />
+      </View>
     </ImageBackground>
   );
 }
@@ -31,24 +40,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
   },
-  loginButton: {
+  buttonContainer: {
+    padding: 20,
     width: "100%",
-    height: 70,
-    backgroundColor: colors.secondary,
-  },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors.primary,
   },
   logo: {
     width: 80,
     height: 80,
   },
-  text: {
+  tagLine: {
     color: colors.black,
-    fontSize: 20,
-    fontWeight: "700",
+    fontSize: 23,
+    fontWeight: "600",
+    marginVertical: 20,
   },
   logoContainer: {
     position: "absolute",
