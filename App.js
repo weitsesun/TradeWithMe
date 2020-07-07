@@ -6,6 +6,7 @@ import WelcomePage from "./app/screens/WelcomePage";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import Card from "./app/components/Card";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
+import MessageScreen from "./app/screens/MessageScreen";
 
 export default function App() {
   // return <WelcomePage />;
@@ -17,7 +18,8 @@ export default function App() {
   //     image={require("./app/assets/controller.jpg")}
   //   />
   // );
-  return <ViewImageScreen />;
+  // return <ViewImageScreen />;
+  return <MessageScreen />;
 }
 
 const styles = StyleSheet.create({
