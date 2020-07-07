@@ -7,6 +7,7 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import Card from "./app/components/Card";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
 import MessageScreen from "./app/screens/MessageScreen";
+import MyAccountScreen from "./app/screens/MyAccountScreen";
 
 export default function App() {
   // return <WelcomePage />;
@@ -19,7 +20,8 @@ export default function App() {
   //   />
   // );
   // return <ViewImageScreen />;
-  return <MessageScreen />;
+  // return <MessageScreen />;
+  return <MyAccountScreen />;
 }
 
 const styles = StyleSheet.create({
