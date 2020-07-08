@@ -8,6 +8,8 @@ import Card from "./app/components/Card";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
 import MessageScreen from "./app/screens/MessageScreen";
 import MyAccountScreen from "./app/screens/MyAccountScreen";
+import ListItem from "./app/components/ListItem";
+import Icon from "./app/components/Icon";
 
 export default function App() {
   // return <WelcomePage />;

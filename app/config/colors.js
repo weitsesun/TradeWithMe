@@ -5,5 +5,5 @@ export default {
   black: "#202020",
   white: "#f0f0f0",
   gray: "#aaa",
-  gray_light: "#f8f4f4",
+  gray_light: "#dfdfdf",
 };
