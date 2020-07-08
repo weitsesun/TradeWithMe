@@ -10,6 +10,7 @@ import MessageScreen from "./app/screens/MessageScreen";
 import MyAccountScreen from "./app/screens/MyAccountScreen";
 import ListItem from "./app/components/ListItem";
 import Icon from "./app/components/Icon";
+import ListingScreen from "./app/screens/ListingScreen";
 
 export default function App() {
   // return <WelcomePage />;
@@ -23,7 +24,8 @@ export default function App() {
   // );
   // return <ViewImageScreen />;
   // return <MessageScreen />;
-  return <MyAccountScreen />;
+  // return <MyAccountScreen />;
+  return <ListingScreen />;
 }
 
 const styles = StyleSheet.create({
