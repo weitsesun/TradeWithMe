@@ -5,7 +5,9 @@ import Constants from "expo-constants";
 function Screen({ children, style }) {
   return (
     <SafeAreaView style={[styles.screen, style]}>
-      <View style={Constants.platform.ios ? style : {}}>{children}</View>
+      <View style={[Constants.platform.ios ? style : {}, { height: "100%" }]}>
+        {children}
+      </View>
     </SafeAreaView>
   );
 }

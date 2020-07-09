@@ -17,7 +17,7 @@ const listings = [
     id: 2,
     title: "Lamp in good condition",
     price: 20,
-    image: require("../assets/lamp.jpg"),
+    image: require("../assets/shoes.jpg"),
   },
 ];
 
