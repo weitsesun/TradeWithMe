@@ -15,7 +15,7 @@ import Card from "./app/components/Card";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
 import MessageScreen from "./app/screens/MessageScreen";
 import MyAccountScreen from "./app/screens/MyAccountScreen";
-import ListItem from "./app/components/ListItem";
+import { ListItem } from "./app/components/lists";
 import Icon from "./app/components/Icon";
 import ListingScreen from "./app/screens/ListingScreen";
 import Screen from "./app/components/Screen";
@@ -39,7 +39,7 @@ export default function App() {
   const [category, setCategory] = useState(categories[0]);
 
   // return <WelcomePage />;
-  // return <ListingDetailScreen />;
+  return <ListingDetailScreen />;
   // return (
   //   <Card
   //     title="Blue PS4 Controller in good condition"
@@ -65,7 +65,7 @@ export default function App() {
   // );
   // return <LoginScreen />;
   // return <RegisterScreen />;
-  return <ListingEditScreen />;
+  // return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({
