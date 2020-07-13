@@ -53,11 +53,13 @@ function ListingEditScreen() {
           autoCorrect={false}
           keyboardType="numeric"
           name="price"
+          width={120}
         />
         <AppFormPicker
           placeholder="Category"
           items={categories}
           name="category"
+          width="50%"
         />
         <AppFormField
           placeholder="Description"

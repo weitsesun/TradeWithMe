@@ -48,7 +48,7 @@ export default function App() {
   //   />
   // );
   // return <ViewImageScreen />;
-  return <MessageScreen />;
+  // return <MessageScreen />;
   // return <MyAccountScreen />;
   // return <ListingScreen />;
   // return (
@@ -65,7 +65,7 @@ export default function App() {
   // );
   // return <LoginScreen />;
   // return <RegisterScreen />;
-  // return <ListingEditScreen />;
+  return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({
