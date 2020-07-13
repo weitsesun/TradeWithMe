@@ -23,7 +23,12 @@ import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
+/**
+ * Temporary Data
+ * TODO: Delete later
+ */
 const categories = [
   { label: "Furniture", value: 1 },
   { label: "Clothing", value: 2 },
@@ -59,7 +64,8 @@ export default function App() {
   //   </Screen>
   // );
   // return <LoginScreen />;
-  return <RegisterScreen />;
+  // return <RegisterScreen />;
+  return <ListingEditScreen />;
 }
 
 const styles = StyleSheet.create({
