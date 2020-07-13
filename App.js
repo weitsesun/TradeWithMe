@@ -39,7 +39,7 @@ export default function App() {
   const [category, setCategory] = useState(categories[0]);
 
   // return <WelcomePage />;
-  return <ListingDetailScreen />;
+  // return <ListingDetailScreen />;
   // return (
   //   <Card
   //     title="Blue PS4 Controller in good condition"
@@ -48,7 +48,7 @@ export default function App() {
   //   />
   // );
   // return <ViewImageScreen />;
-  // return <MessageScreen />;
+  return <MessageScreen />;
   // return <MyAccountScreen />;
   // return <ListingScreen />;
   // return (
