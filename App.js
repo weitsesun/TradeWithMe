@@ -29,6 +29,7 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 import ImageInput from "./app/components/ImageInput";
+import ImageInputList from "./app/components/ImageInputList";
 
 /**
  * Temporary Data
@@ -41,24 +42,14 @@ const categories = [
 ];
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
-    if (!granted) alert("Permission denied");
+  const [imageUris, setImageUris] = useState([]);
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
   };
 
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      setImageUri(result.uri);
-    } catch (error) {
-      console.log("Error reading images:", error);
-    }
+  const handleRemove = (uri) => {
+    setImageUris((prev) => prev.filter((imageUri) => imageUri !== uri));
   };
-
-  useEffect(() => {
-    requestPermission();
-  }, []);
 
   // return <WelcomePage />;
   // return <ListingDetailScreen />;
@@ -90,9 +81,10 @@ export default function App() {
   // return <ListingEditScreen />;
   return (
     <Screen>
-      <ImageInput
-        imageUri={imageUri}
-        onChangeImage={(uri) => setImageUri(uri)}
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </Screen>
   );
