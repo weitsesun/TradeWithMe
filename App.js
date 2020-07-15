@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,6 +7,8 @@ import {
   View,
   Dimensions,
   TextInput,
+  Button,
+  Image,
 } from "react-native";
 
 import WelcomePage from "./app/screens/WelcomePage";
@@ -24,6 +26,9 @@ import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
+import ImageInput from "./app/components/ImageInput";
 
 /**
  * Temporary Data
@@ -36,7 +41,24 @@ const categories = [
 ];
 
 export default function App() {
-  const [category, setCategory] = useState(categories[0]);
+  const [imageUri, setImageUri] = useState();
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
+    if (!granted) alert("Permission denied");
+  };
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      setImageUri(result.uri);
+    } catch (error) {
+      console.log("Error reading images:", error);
+    }
+  };
+
+  useEffect(() => {
+    requestPermission();
+  }, []);
 
   // return <WelcomePage />;
   // return <ListingDetailScreen />;
@@ -65,7 +87,14 @@ export default function App() {
   // );
   // return <LoginScreen />;
   // return <RegisterScreen />;
-  return <ListingEditScreen />;
+  // return <ListingEditScreen />;
+  return (
+    <Screen>
+      <Button title="Select Image" onPress={selectImage} />
+      {/* <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} /> */}
+      <ImageInput imageUri={imageUri} />
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
