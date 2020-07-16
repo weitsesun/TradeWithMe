@@ -8,8 +8,8 @@ import {
   FlatList,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Screen from "./Screen";
 
+import Screen from "./Screen";
 import defaultStyle from "../config/styles";
 import AppText from "./AppText";
 import PickerItem from "./PickerItem";
