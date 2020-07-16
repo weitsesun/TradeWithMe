@@ -78,16 +78,16 @@ export default function App() {
   // );
   // return <LoginScreen />;
   // return <RegisterScreen />;
-  // return <ListingEditScreen />;
-  return (
-    <Screen>
-      <ImageInputList
-        imageUris={imageUris}
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-      />
-    </Screen>
-  );
+  return <ListingEditScreen />;
+  // return (
+  //   <Screen>
+  //     <ImageInputList
+  //       imageUris={imageUris}
+  //       onAddImage={handleAdd}
+  //       onRemoveImage={handleRemove}
+  //     />
+  //   </Screen>
+  // );
 }
 
 const styles = StyleSheet.create({
