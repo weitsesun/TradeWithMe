@@ -31,6 +31,9 @@ import * as Permissions from "expo-permissions";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
 
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+
 /**
  * Temporary Data
  * TODO: Delete later
@@ -41,16 +44,35 @@ const categories = [
   { label: "Cameras", value: 3 },
 ];
 
+const Link = () => {
+  const navigation = useNavigation();
+  return (
+    <Button title="Click" onPress={() => navigation.navigate("TweetDetails")} />
+  );
+};
+
+const Tweets = ({ navigation }) => (
+  <Screen>
+    <Text>Tweets</Text>
+    <Link />
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>Tweets Details</Text>
+  </Screen>
+);
+
+const Stack = createStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+  </Stack.Navigator>
+);
+
 export default function App() {
-  const [imageUris, setImageUris] = useState([]);
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-
-  const handleRemove = (uri) => {
-    setImageUris((prev) => prev.filter((imageUri) => imageUri !== uri));
-  };
-
   // return <WelcomePage />;
   // return <ListingDetailScreen />;
   // return (
@@ -78,7 +100,7 @@ export default function App() {
   // );
   // return <LoginScreen />;
   // return <RegisterScreen />;
-  return <ListingEditScreen />;
+  // return <ListingEditScreen />;
   // return (
   //   <Screen>
   //     <ImageInputList
@@ -88,6 +110,11 @@ export default function App() {
   //     />
   //   </Screen>
   // );
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
