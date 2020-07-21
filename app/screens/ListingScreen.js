@@ -21,7 +21,7 @@ const listings = [
   },
 ];
 
-function ListingScreen(props) {
+function ListingScreen({ navigation }) {
   //Render cards using flat list
   return (
     <Screen style={styles.container}>
@@ -33,6 +33,7 @@ function ListingScreen(props) {
             title={item.title}
             subtitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate("ListingDetails", item)}
           />
         )}
       />

@@ -5,7 +5,7 @@ import AppText from "../components/AppText";
 import colors from "../config/colors";
 import { ListItem } from "../components/lists";
 
-function ListingDetailScreen(props) {
+function ListingDetailScreen() {
   return (
     <View style={styles.container}>
       <Image
