@@ -3,12 +3,7 @@ import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import colors from "../config/colors.js";
 import AppButton from "../components/AppButton";
 
-export default function WelcomePage() {
-  function onPress() {
-    console.log("clicked");
-    return;
-  }
-
+export default function WelcomePage({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
@@ -24,8 +19,12 @@ export default function WelcomePage() {
         <Text style={styles.tagLine}>Trade Your Stuff Here</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="login" onPress={onPress} />
-        <AppButton title="register" color="secondary" />
+        <AppButton title="login" onPress={() => navigation.navigate("Login")} />
+        <AppButton
+          title="register"
+          color="secondary"
+          onPress={() => navigation.navigate("Register")}
+        />
       </View>
     </ImageBackground>
   );
