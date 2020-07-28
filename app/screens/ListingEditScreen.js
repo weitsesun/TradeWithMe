@@ -23,26 +23,70 @@ const validationSchema = Yup.object().shape({
   images: Yup.array().min(1, "Please select at least one image"),
 });
 
+/**
+ * Temporary Data
+ * TODO: Delete later
+ */
+const categories = [
+  {
+    label: "Furniture",
+    value: 1,
+    backgroundColor: "red",
+    icon: "apple",
+  },
+  {
+    label: "Clothing",
+    value: 2,
+    backgroundColor: "dodgerblue",
+    icon: "account",
+  },
+  {
+    label: "Cameras",
+    value: 3,
+    backgroundColor: "orange",
+    icon: "alpha-k-circle",
+  },
+  {
+    label: "Cameras",
+    value: 4,
+    backgroundColor: "orange",
+    icon: "alpha-k-circle",
+  },
+  {
+    label: "Cameras",
+    value: 5,
+    backgroundColor: "orange",
+    icon: "alpha-k-circle",
+  },
+];
+
 function ListingEditScreen() {
   const location = useLocation();
   const [uploadVisible, setUploadVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
   const handleSubmit = async (listing) => {
+    setProgress(0);
     setUploadVisible(true);
     const result = await listingsApi.addListing(
       { ...listing, location },
       (progress) => setProgress(progress)
     );
-    setUploadVisible(false);
 
-    if (!result.ok) return alert("Failed to save the new listing.");
-    alert("Success");
+    if (!result.ok) {
+      setUploadVisible(false);
+
+      return alert("Failed to save the new listing.");
+    }
   };
 
   return (
     <Screen style={styles.container}>
-      <UploadScreen progress={progress} visible={uploadVisible} />
+      <UploadScreen
+        onDone={() => setUploadVisible(false)}
+        progress={progress}
+        visible={uploadVisible}
+      />
       <AppForm
         initialValues={{
           title: "",
