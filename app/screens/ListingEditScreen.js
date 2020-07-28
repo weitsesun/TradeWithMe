@@ -23,43 +23,6 @@ const validationSchema = Yup.object().shape({
   images: Yup.array().min(1, "Please select at least one image"),
 });
 
-/**
- * Temporary Data
- * TODO: Delete later
- */
-const categories = [
-  {
-    label: "Furniture",
-    value: 1,
-    backgroundColor: "red",
-    icon: "apple",
-  },
-  {
-    label: "Clothing",
-    value: 2,
-    backgroundColor: "dodgerblue",
-    icon: "account",
-  },
-  {
-    label: "Cameras",
-    value: 3,
-    backgroundColor: "orange",
-    icon: "alpha-k-circle",
-  },
-  {
-    label: "Cameras",
-    value: 4,
-    backgroundColor: "orange",
-    icon: "alpha-k-circle",
-  },
-  {
-    label: "Cameras",
-    value: 5,
-    backgroundColor: "orange",
-    icon: "alpha-k-circle",
-  },
-];
-
 function ListingEditScreen() {
   const location = useLocation();
   const [uploadVisible, setUploadVisible] = useState(false);
