@@ -13,8 +13,8 @@ apiClient.get = async (url, params, axiosConfig) => {
     return response;
   }
 
-  // We are at this point when failed to connect to server
-  // Try get data from local storage
+  // We are at this point if we failed to connect to server
+  // So, we try to get data from local storage
   const data = await cache.get(url);
 
   return data ? { ok: true, data } : response;
