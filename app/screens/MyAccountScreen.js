@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 
 import Screen from "../components/Screen";
@@ -6,6 +6,7 @@ import Icon from "../components/Icon";
 import { ListItem, ListItemSeparator } from "../components/lists";
 
 import colors from "../config/colors";
+import AuthContext from "../auth/context";
 
 const menuItems = [
   {
@@ -27,12 +28,14 @@ const menuItems = [
 ];
 
 function MyAccountScreen({ navigation }) {
+  const { user, setUser } = useContext(AuthContext);
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title="Wayne"
-          subtitle="wtse.sun@gmail.com"
+          title={user.name}
+          subtitle={user.email}
           image={require("../assets/wayne.jpeg")}
         />
       </View>
@@ -58,6 +61,7 @@ function MyAccountScreen({ navigation }) {
       <ListItem
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor={colors.tertiary} />}
+        onPress={() => setUser(null)}
       />
     </Screen>
   );
