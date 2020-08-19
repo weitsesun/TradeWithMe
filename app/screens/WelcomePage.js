@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
   },
   tagLine: {
     color: colors.black,
-    fontSize: 23,
+    fontSize: 25,
     fontWeight: "600",
     marginVertical: 20,
   },
   logoContainer: {
     position: "absolute",
-    top: 70,
+    top: 100,
     justifyContent: "center",
     flex: 1,
     alignItems: "center",
